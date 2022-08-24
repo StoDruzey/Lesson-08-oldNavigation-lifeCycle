@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.lesson08oldnavigationlifecycle.databinding.ActivityMainBinding
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity() {
             .apply {
                 button.setOnClickListener {
                     val intent = Intent(this@MainActivity, SecondActivity::class.java)
+                        .putExtra("key_text", UUID.randomUUID().toString())
                     this@MainActivity.startActivity(intent)
                 }
             }
